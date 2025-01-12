@@ -3,18 +3,19 @@ import axios from 'axios';
 
 export const ApiContext = createContext();
 
-
+ 
 function APIContextProvider({children}) {
 
   const [apiData, setApiData] = useState(null);
-  const [movieTitle, setMovieTitle] = useState("thor");
+  const [movieTitle, setMovieTitle] = useState("Dhoom");
   const apiKey = "23405d69";
 
   const getMovieData = async () => {
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com/?t=${movieTitle}&apikey=${apiKey}`
+        `https://www.omdbapi.com/?t=${movieTitle}&apikey=${apiKey}`
       );
+      
       const data = response.data;
 
       if (data.Response === "True") {

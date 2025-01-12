@@ -7,23 +7,14 @@ function Home() {
   const { apiData } = useContext(ApiContext);
   const { movieTitle, handleChange } = useContext(ApiContext);
 
-  console.log(apiData);
-  if (!apiData) {
+   if (!apiData) {
     return (
-      <div className=" text-center mt-11">
-        <div className="w-full text-center">
-          <input
-            type="text"
-            onChange={handleChange}
-            value={movieTitle}
-            placeholder="Search Movies ..."
-            className="w-[264px] text-center outline-none border-2 border-black rounded-full py-1 px-3 bg-gray-500 placeholder:text-white text-white"
-          />
-        </div>
-        <h1 className="text-6xl font-bold py-3"> Loading...</h1>
+      <div className="flex items-center justify-center h-screen">
+        <p>Unable to load movie details. Please try again later.</p>
       </div>
     );
   }
+  
 
   return (
     <div
